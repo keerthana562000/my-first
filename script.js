@@ -1,88 +1,101 @@
 // =====================================
-// Task 1 : Employee Registration
+// Task 1 : Employee Management System
 // =====================================
 
-let employeeName = "Keerthana";
-let employeeId = "1245";
-let department = "Development";
-let salary = 40000;
-const isPermanent = true;
+let employees = [
+    {
+        name: "KEERTHANA",
+        id: 121,
+        salary: 40000
+    },
+    {
+        name: "AJAY",
+        id: 122,
+        salary: 50000
+    }
+];
 
-console.log("Employee Details");
-console.log("----------------");
-console.log(`Name       : ${employeeName}`);
-console.log(`ID         : ${employeeId}`);
-console.log(`Department : ${department}`);
-console.log(`Salary     : ${salary}`);
-console.log(`Permanent  : ${isPermanent}`);
+for(let emp of employees){
+    console.log(`Name : ${emp.name}`);
+    console.log(`ID : ${emp.id}`);
+    console.log(`Salary : ${emp.salary}`);
 
+    if(emp.salary >= 50000){
+        console.log("Employee Eligible For Bonus");
+    }
+    else{
+        console.log("Employee Not Eligible For Bonus");
+    }
 
-// =====================================
-// Task 2 : Employee Skills
-// =====================================
-
-let skills = ["HTML", "CSS", "JavaScript", "React", "Git", "Node.js"];
-
-console.log("\nEmployee Skills");
-console.log(`First Skill : ${skills[0]}`);
-console.log(`Third Skill : ${skills[2]}`);
-console.log(`Last Skill  : ${skills[skills.length - 1]}`);
-console.log(`Total Skills: ${skills.length}`);
-
-
-// =====================================
-// Task 3 : Company Object
-// =====================================
-
-let company = {
-    companyName: "Stackly IT",
-    location: "Coimbatore",
-    employees: 250,
-    technologies: ["HTML", "CSS", "JavaScript", ]
-};
-
-console.log("\nCompany Details");
-console.log(`Company Name      : ${company.companyName}`);
-console.log(`Location          : ${company.location}`);
-console.log(`Second Technology : ${company.technologies[1]}`);
-console.log(`Total Technologies: ${company.technologies.length}`);
+    console.log("------------------------");
+}
 
 
 // =====================================
-// Task 4 : Salary Calculator
+// Task 2 : Student Result Portal
 // =====================================
 
-let basicSalary = 20000;
-let bonus = 5000;
+let tamil = 95;
+let english = 92;
+let maths = 95;
+let science = 86;
+let social = 89;
 
-let totalSalary = basicSalary + bonus;
-let tax = totalSalary * 0.10;
-let finalSalary = totalSalary - tax;
+let total = tamil + english + maths + science + social;
+let percentage = total / 5;
 
-console.log("\nSalary Details");
-console.log(`Basic Salary : ${basicSalary}`);
-console.log(`Bonus        : ${bonus}`);
-console.log(`Total Salary : ${totalSalary}`);
-console.log(`Tax (10%)    : ${tax}`);
-console.log(`Final Salary : ${finalSalary}`);
+console.log("Total Marks :", total);
+console.log("Percentage :", percentage);
+
+if(percentage >= 90){
+    console.log("Grade : A+");
+}
+else if(percentage >= 80){
+    console.log("Grade : A");
+}
+else if(percentage >= 70){
+    console.log("Grade : B");
+}
+else if(percentage >= 60){
+    console.log("Grade : C");
+}
+else{
+    console.log("Grade : Fail");
+}
 
 
 // =====================================
-// Task 5 : Attendance Checker
+// Task 3 : E-Commerce Cart
 // =====================================
 
-let attendance = 95;
+let products = [
+    {name:"Laptop", price:45000},
+    {name:"Mouse", price:1000},
+    {name:"Keyboard", price:1000}
+];
 
-let examStatus =
-    attendance >= 75 ? "Eligible for Exam" : "Not Eligible";
+function calculateBill(items){
 
-console.log("\nAttendance Status");
-console.log(`Attendance : ${attendance}%`);
-console.log(`Status     : ${examStatus}`);
+    let totalBill = 0;
+
+    for(let item of items){
+        totalBill += item.price;
+    }
+
+    let discount = totalBill > 5000 ? totalBill * 0.10 : 0;
+
+    let finalAmount = totalBill - discount;
+
+    console.log("Total Bill :", totalBill);
+    console.log("Discount :", discount);
+    console.log("Final Amount :", finalAmount);
+}
+
+calculateBill(products);
 
 
 // =====================================
-// Task 6 : Login Verification
+// Task 4 : Login Authentication
 // =====================================
 
 let username = "admin";
@@ -90,145 +103,161 @@ let password = "12345";
 
 let loginStatus =
     username === "admin" && password === "12345"
-        ? "Login Successful"
-        : "Invalid Credentials";
+    ? "Login Success"
+    : "Invalid Credentials";
 
-console.log("\nLogin Status");
 console.log(loginStatus);
 
 
 // =====================================
-// Task 7 : Product Billing
+// Task 5 : Traffic Signal System
 // =====================================
 
-let productName = "Laptop";
-let productPrice = 45000;
-let quantity = 2;
+let signal = "Red";
 
-let totalBill = productPrice * quantity;
+switch(signal){
 
-console.log("\nProduct Billing");
-console.log(`Product  : ${productName}`);
-console.log(`Price    : ${productPrice}`);
-console.log(`Quantity : ${quantity}`);
-console.log(`Total    : ${totalBill}`);
+    case "Red":
+        console.log("Stop");
+        break;
 
+    case "Yellow":
+        console.log("Ready");
+        break;
 
-// =====================================
-// Task 8 : Increment & Decrement
-// =====================================
+    case "Green":
+        console.log("Go");
+        break;
 
-let visitors = 100;
-
-console.log("\nIncrement & Decrement");
-
-console.log(`Initial Value : ${visitors}`);
-
-console.log(`Pre Increment  : ${++visitors}`);
-// Increases first, then prints -> 101
-
-console.log(`Post Increment : ${visitors++}`);
-// Prints first, then increases -> 101
-// visitors becomes 102
-
-console.log(`Current Value  : ${visitors}`);
-
-console.log(`Pre Decrement  : ${--visitors}`);
-// Decreases first, then prints -> 101
-
-console.log(`Post Decrement : ${visitors--}`);
-// Prints first, then decreases -> 101
-// visitors becomes 100
-
-console.log(`Final Value    : ${visitors}`);
-
-
-// =====================================
-// Task 9 : Comparison Checker
-// =====================================
-
-console.log("\nComparison Results");
-
-console.log(10 == "10");      // true
-console.log(20 != "20");      // false
-console.log(20 !== "20");     // true
-console.log(5 < 10);          // true
-console.log(15 >= 20);        // fal
-
-
-// =====================================
-// Task 10 : User Interaction
-// =====================================
-
-let empName = prompt("Enter Employee Name:");
-let empAge = prompt("Enter Employee Age:");
-
-let joinCompany = confirm(
-    "Do you want to join our company?"
-);
-
-if (joinCompany) {
-    alert(`Welcome ${empName}`);
-} else {
-    alert("Thank You");
+    default:
+        console.log("Invalid Signal");
 }
 
 
 // =====================================
-// Final Challenge : Mini Employee Portal
+// Task 6 : ATM Withdrawal System
 // =====================================
 
-let employee = {
-    name: "Keerthana",
-    id: "1245",
-    department: "Development",
-    experience: 2,
-    salary: 40000,
-    attendance: 95
-};
+let balance = Number(prompt("Enter Account Balance"));
+let withdrawAmount = Number(prompt("Enter Withdrawal Amount"));
 
-let employeeSkills = [
-    "HTML",
-    "CSS",
-    "JavaScript",
-    
+if(withdrawAmount <= balance){
+    balance -= withdrawAmount;
+    alert(`Withdrawal Successful
+Remaining Balance : ₹${balance}`);
+}
+else{
+    alert("Insufficient Balance");
+}
+
+
+// =====================================
+// Task 7 : Online Food Order
+// =====================================
+
+function prepareFood(callback){
+    console.log("Food Preparing...");
+    callback();
+}
+
+function deliverFood(){
+    console.log("Food Delivered");
+}
+
+console.log("Order Received");
+prepareFood(deliverFood);
+
+
+// =====================================
+// Task 8 : Cashback Generator
+// =====================================
+
+function* cashbackGenerator(){
+
+    yield "10% Cashback";
+    yield "20% Cashback";
+    yield "50% Cashback";
+    yield "Better Luck Next Time";
+}
+
+let offers = cashbackGenerator();
+
+console.log(offers.next().value);
+console.log(offers.next().value);
+console.log(offers.next().value);
+console.log(offers.next().value);
+
+
+// =====================================
+// Task 9 : Hospital Patient Check
+// =====================================
+
+let age = 23;
+let weight = 58;
+
+if(age > 18){
+
+    if(weight > 50){
+        console.log("Eligible For Treatment");
+    }
+    else{
+        console.log("Not Eligible");
+    }
+
+}
+else{
+    console.log("Not Eligible");
+}
+
+
+// =====================================
+// Task 10 : Mini Employee Portal
+// =====================================
+
+let employeeList = [
+    {
+        id:121,
+        name:"KEERTHANA",
+        salary:40000
+    },
+    {
+        id:122,
+        name:"AJAY",
+        salary:50000
+    }
 ];
 
-let companyInfo = {
-    companyName: "Stackly IT",
-    location: "Coimbatore"
-};
+// View Employees
+console.log("Employee List");
+for(let emp of employeeList){
+    console.log(emp);
+}
 
-let empBonus = 5000;
-let finalEmpSalary = employee.salary + empBonus;
+// Calculate Bonus
+for(let emp of employeeList){
+    let bonus = emp.salary * 0.10;
+    console.log(`${emp.name} Bonus : ₹${bonus}`);
+}
 
-let examEligibility =
-    employee.attendance >= 75
-        ? "Eligible"
-        : "Not Eligible";
+// Search Employee By ID
+let searchId = 121;
 
-let login =
-    username === "admin" && password === "12345"
-        ? "Success"
-        : "Failed";
+let foundEmployee = employeeList.find(
+    emp => emp.id === searchId
+);
 
-console.log("\n==============================");
-console.log("      EMPLOYEE PORTAL");
-console.log("==============================");
+console.log("Employee Found :", foundEmployee);
 
-console.log(`Employee Name : ${employee.name}`);
-console.log(`Employee ID   : ${employee.id}`);
-console.log(`Department    : ${employee.department}`);
-console.log(`Experience    : ${employee.experience} Years`);
-console.log(`Salary        : ₹${employee.salary}`);
-console.log(`Bonus         : ₹${empBonus}`);
-console.log(`Final Salary  : ₹${finalEmpSalary}`);
-console.log(`Skills        : ${employeeSkills.join(", ")}`);
-console.log(`Attendance    : ${employee.attendance}%`);
-console.log(`Exam Status   : ${examEligibility}`);
-console.log(`Login Status  : ${login}`);
-console.log(`Company       : ${companyInfo.companyName}`);
-console.log(`Location      : ${companyInfo.location}`);
+// Delete Employee
+employeeList = employeeList.filter(
+    emp => emp.id !== 102
+);
 
-console.log("==============================");
+console.log("After Delete");
+console.log(employeeList);
 
+// Total Employee Count
+console.log(
+    "Total Employees :",
+    employeeList.length
+);
