@@ -1,234 +1,62 @@
 // =====================================
-// Task 1 : Employee Registration
+// Real-Time Employee Portal Task
 // =====================================
 
-let employeeName = "Keerthana";
-let employeeId = "1245";
-let department = "Development";
-let salary = 40000;
-const isPermanent = true;
+// 1. Store employee name using var
+var employeeName = "Keerthana";
 
-console.log("Employee Details");
-console.log("----------------");
-console.log(`Name       : ${employeeName}`);
-console.log(`ID         : ${employeeId}`);
-console.log(`Department : ${department}`);
-console.log(`Salary     : ${salary}`);
-console.log(`Permanent  : ${isPermanent}`);
+// 2. Store employee age using let
+let employeeAge = 26;
 
+// 3. Store company name using const
+const companyName = "Stackly";
 
-// =====================================
-// Task 2 : Employee Skills
-// =====================================
+// 4. Print all details using console.log()
+console.log("Employee Name :", employeeName);
+console.log("Employee Age :", employeeAge);
+console.log("Company Name :", companyName);
 
-let skills = ["HTML", "CSS", "JavaScript", "React", "Git", "Node.js"];
+// -------------------------------------
 
-console.log("\nEmployee Skills");
-console.log(`First Skill : ${skills[0]}`);
-console.log(`Third Skill : ${skills[2]}`);
-console.log(`Last Skill  : ${skills[skills.length - 1]}`);
-console.log(`Total Skills: ${skills.length}`);
+// 5. Show a popup message
+alert("Welcome to Employee Portal");
 
+// -------------------------------------
 
-// =====================================
-// Task 3 : Company Object
-// =====================================
+// 6. Ask the employee if today's task is completed
+let taskStatus = confirm("Have you completed today's task?");
 
-let company = {
-    companyName: "Stackly IT",
-    location: "Coimbatore",
-    employees: 250,
-    technologies: ["HTML", "CSS", "JavaScript", ]
-};
+// Print result in console
+console.log(taskStatus);
 
-console.log("\nCompany Details");
-console.log(`Company Name      : ${company.companyName}`);
-console.log(`Location          : ${company.location}`);
-console.log(`Second Technology : ${company.technologies[1]}`);
-console.log(`Total Technologies: ${company.technologies.length}`);
+// -------------------------------------
 
+// 7. Ask employee name using prompt()
+let enteredName = prompt("Enter your name");
 
-// =====================================
-// Task 4 : Salary Calculator
-// =====================================
+// Print entered name in console
+console.log("Entered Employee Name :", enteredName);
 
-let basicSalary = 20000;
-let bonus = 5000;
+// -------------------------------------
 
-let totalSalary = basicSalary + bonus;
-let tax = totalSalary * 0.10;
-let finalSalary = totalSalary - tax;
+// 8. Display entered employee name on webpage
+document.writeln("<h2>Welcome " + enteredName + "</h2>");
 
-console.log("\nSalary Details");
-console.log(`Basic Salary : ${basicSalary}`);
-console.log(`Bonus        : ${bonus}`);
-console.log(`Total Salary : ${totalSalary}`);
-console.log(`Tax (10%)    : ${tax}`);
-console.log(`Final Salary : ${finalSalary}`);
+// -------------------------------------
 
+// 9. Print success message using console.warn()
+console.warn("Task submitted successfully");
 
-// =====================================
-// Task 5 : Attendance Checker
-// =====================================
+// -------------------------------------
 
-let attendance = 95;
+// 10. Print error message using console.error()
+console.error("Task submission failed");
 
-let examStatus =
-    attendance >= 75 ? "Eligible for Exam" : "Not Eligible";
+// -------------------------------------
 
-console.log("\nAttendance Status");
-console.log(`Attendance : ${attendance}%`);
-console.log(`Status     : ${examStatus}`);
+// Bonus Task:
+// Update employee age after promotion
+employeeAge = 26;
 
-
-// =====================================
-// Task 6 : Login Verification
-// =====================================
-
-let username = "admin";
-let password = "12345";
-
-let loginStatus =
-    username === "admin" && password === "12345"
-        ? "Login Successful"
-        : "Invalid Credentials";
-
-console.log("\nLogin Status");
-console.log(loginStatus);
-
-
-// =====================================
-// Task 7 : Product Billing
-// =====================================
-
-let productName = "Laptop";
-let productPrice = 45000;
-let quantity = 2;
-
-let totalBill = productPrice * quantity;
-
-console.log("\nProduct Billing");
-console.log(`Product  : ${productName}`);
-console.log(`Price    : ${productPrice}`);
-console.log(`Quantity : ${quantity}`);
-console.log(`Total    : ${totalBill}`);
-
-
-// =====================================
-// Task 8 : Increment & Decrement
-// =====================================
-
-let visitors = 100;
-
-console.log("\nIncrement & Decrement");
-
-console.log(`Initial Value : ${visitors}`);
-
-console.log(`Pre Increment  : ${++visitors}`);
-// Increases first, then prints -> 101
-
-console.log(`Post Increment : ${visitors++}`);
-// Prints first, then increases -> 101
-// visitors becomes 102
-
-console.log(`Current Value  : ${visitors}`);
-
-console.log(`Pre Decrement  : ${--visitors}`);
-// Decreases first, then prints -> 101
-
-console.log(`Post Decrement : ${visitors--}`);
-// Prints first, then decreases -> 101
-// visitors becomes 100
-
-console.log(`Final Value    : ${visitors}`);
-
-
-// =====================================
-// Task 9 : Comparison Checker
-// =====================================
-
-console.log("\nComparison Results");
-
-console.log(10 == "10");      // true
-console.log(20 != "20");      // false
-console.log(20 !== "20");     // true
-console.log(5 < 10);          // true
-console.log(15 >= 20);        // fal
-
-
-// =====================================
-// Task 10 : User Interaction
-// =====================================
-
-let empName = prompt("Enter Employee Name:");
-let empAge = prompt("Enter Employee Age:");
-
-let joinCompany = confirm(
-    "Do you want to join our company?"
-);
-
-if (joinCompany) {
-    alert(`Welcome ${empName}`);
-} else {
-    alert("Thank You");
-}
-
-
-// =====================================
-// Final Challenge : Mini Employee Portal
-// =====================================
-
-let employee = {
-    name: "Keerthana",
-    id: "1245",
-    department: "Development",
-    experience: 2,
-    salary: 40000,
-    attendance: 95
-};
-
-let employeeSkills = [
-    "HTML",
-    "CSS",
-    "JavaScript",
-    
-];
-
-let companyInfo = {
-    companyName: "Stackly IT",
-    location: "Coimbatore"
-};
-
-let empBonus = 5000;
-let finalEmpSalary = employee.salary + empBonus;
-
-let examEligibility =
-    employee.attendance >= 75
-        ? "Eligible"
-        : "Not Eligible";
-
-let login =
-    username === "admin" && password === "12345"
-        ? "Success"
-        : "Failed";
-
-console.log("\n==============================");
-console.log("      EMPLOYEE PORTAL");
-console.log("==============================");
-
-console.log(`Employee Name : ${employee.name}`);
-console.log(`Employee ID   : ${employee.id}`);
-console.log(`Department    : ${employee.department}`);
-console.log(`Experience    : ${employee.experience} Years`);
-console.log(`Salary        : ₹${employee.salary}`);
-console.log(`Bonus         : ₹${empBonus}`);
-console.log(`Final Salary  : ₹${finalEmpSalary}`);
-console.log(`Skills        : ${employeeSkills.join(", ")}`);
-console.log(`Attendance    : ${employee.attendance}%`);
-console.log(`Exam Status   : ${examEligibility}`);
-console.log(`Login Status  : ${login}`);
-console.log(`Company       : ${companyInfo.companyName}`);
-console.log(`Location      : ${companyInfo.location}`);
-
-console.log("==============================");
-
+// Print updated age
+console.log("Updated Employee Age :", employeeAge);
